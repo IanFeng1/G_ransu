@@ -1,0 +1,26 @@
+<body onKeyDown="{
+   let myArrwokey = event.keyCode
+   let myAlphaKey = event.key
+
+     if (myArrowKey == 37) {
+       document.getElementById('mySpan01').innerHTML = 'Hi from onKeyDown left arrow pressed'
+     }
+     if (myArrowKey == 'd' ) {
+       document.getElementById('mySpan01').innerHTML = 'Hi from onKeyDown d key pressed'
+     }
+}">
+
+<h1 alihn=center>T3A09-event-Lance</h1>
+Output span: <span id="mySpan01">...</span><br><br>
+
+Traditional onclick event: <input type=button value="onclick event" onClick="{
+   // alert('Hi from onClick');
+     document.getElementById('mySpan01').innerHTML ='Hi from onclick'
+}"><br><br>
+
+This is <b> bold </b> this isn`t<br>
+This is <b onMouseOver="{
+   document.getElementById('mySpan01').innerHTML ='Hi from onclick'
+}">bold and onMouserOver</b> this isn`t<br><br>
+
+</body>
