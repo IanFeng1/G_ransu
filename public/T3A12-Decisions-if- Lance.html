@@ -1,4 +1,4 @@
-<h1 alig=center>T3A12-Decisions-if-Lance.html1</h1>
+<h1 alig=center>T3A12-Decisions-if-Lance.html</h1>
 
 <pre>
 || means OR
@@ -8,8 +8,11 @@
 <input id="myText01"type=text value=''><br><br>
 <input type=button value="Show X" onclick="{
    x = document.getElementById('myText01').value
-   if (x >= 2){myTemp = 'omedetou'}
+   if (x >= 2){myTemp = 'First key is the first'
+}else
+ myTemp= 'too simall'
    document.getElementById('mySpan01').innerHTML = myTemp
+
 }"><br><br>
 <span id ="mySpan01">...</span><br>
 
@@ -20,16 +23,16 @@
    myY = document.getElementById('myText02b').value
    myTemp = '......'
    if (myX > 2 && myY < -4){
-      myTemp = 'x greater than 2 and y less than -4'
+      myTemp = 'second key was nothing '
    } else {
-      myTemp = 'not'
+      myTemp = 'little or huge ?'
    }
    document.getElementById('mySpan02').innerHTML = myTemp
 }"><br>
 
 <span id ="mySpan02">...</span><br><br>
  
-choose three number<br>
+third key is end<br>
 <input id="myText03a" type=text value=' '>
 <input id="myText03b" type=text value=' '>
 <input id="myText03c" type=text value=' '><br>
@@ -37,9 +40,9 @@ choose three number<br>
    myx = document.getElementById('myText03a').value
    myy = document.getElementById('myText03b').value
    myz = document.getElementById('myText03c').value
- myTemp = '......'
-   if (myx == 1 && myy == 2 && myz == 3){
-    myTemp = ' <a href=https://www.youtube.com/watch?v=dQw4w9WgXcQ>Easter Egg'
+ myTemp = 'third key is end '
+   if (myx == 1 && myy == 0 && myz == 7){
+    myTemp = ' <a href=egg.html>Easter Egg'
    } else {
       myTemp = 'You did`t find key'
    }
