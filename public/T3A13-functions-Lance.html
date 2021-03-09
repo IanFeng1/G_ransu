@@ -1,21 +1,36 @@
 <h1 align=center> T3A13-functions-Lance.html</h1>
-<h3>Version number:0.0.1</h3>
+<h3>Version number:0.0.4</h3>
 
 <script>
-function byBasicFun(){
-   document.getElementById('mySpan01').innerHTML="wow"
+function myBasciFun01(){
+	document.getElementById('mySpan01').innerHTML = "RanGan!Impact!"
 }
-function myAdvancedFun(x,y){
-     return x*y
+function myBasicFun02(){
+	document.getElementById('myText01').value = 0
+                document.getElementById('myText02').value = 0
 }
+function myAdFun01(x,y){
+	return x*y
+}
+
 </script>
 
-<input id="myText01"type=text value=3><br><br>
-<input type=button value="Run function" onClick="{
-   //alert('buttton works')
-    myBasicFun()
-}"><br><br>
-<input type=button value="Advanced" onclick="{
-   document.getElementById('mySpan01').innerHTML = myAdvancedFun()
-}"><br><br>
-<span id="mySpan01">...</Span><br><br>
+x<input id="myText01" type=text value= ><br>
+y <input id="myText02" type=text value= ><br><br>
+
+<input type=button value="GuranRaGan" onClick="{
+	myBasciFun01()
+}"><br>
+
+<input type=button value="ALL in Zero" onClick="{
+	myBasicFun02()
+}"><br>
+<input type=button value="2*3" onClick="{
+	document.getElementById('mySpan01').innerHTML = myAdvanceFun01(2,3)
+}"><br>
+<input type=button value="x*y" onClick="{
+	document.getElementById('mySpan01').innerHTML = myAdFun01(document.getElementById('myText01').value,document.getElementById('myText02').value)
+}"><br>
+
+
+<span id="mySpan01">...</span><br><br>
