@@ -1,5 +1,5 @@
 <h1 align=center> T3A13-functions-Lance.html</h1>
-<h3>Version number:0.0.4</h3>
+<h3>Version number:0.0.1</h3>
 
 <script>
 function myBasciFun01(){
@@ -9,7 +9,7 @@ function myBasicFun02(){
 	document.getElementById('myText01').value = 0
                 document.getElementById('myText02').value = 0
 }
-function myAdFun01(x,y){
+function myAdvancedFun01(x,y){
 	return x*y
 }
 
@@ -26,10 +26,10 @@ y <input id="myText02" type=text value= ><br><br>
 	myBasicFun02()
 }"><br>
 <input type=button value="2*3" onClick="{
-	document.getElementById('mySpan01').innerHTML = myAdvanceFun01(2,3)
+	document.getElementById('mySpan01').innerHTML = myAdvancedFun01(2,3)
 }"><br>
 <input type=button value="x*y" onClick="{
-	document.getElementById('mySpan01').innerHTML = myAdFun01(document.getElementById('myText01').value,document.getElementById('myText02').value)
+	document.getElementById('mySpan01').innerHTML = myAdvancedFun01(document.getElementById('myText01').value,document.getElementById('myText02').value)
 }"><br>
 
 
