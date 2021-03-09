@@ -1,14 +1,14 @@
 Version 0.0.6<br>
 <h1 align="myText01" type=text value=3 ><br><br>
 
-Store this input variable into x :
-<input id="myText01" type=text value=3><br><br>
+Store this is input variable into x :
+<input id = "myText01"type=text value= ><br><br>
 
 <input type=button value="show X" onClick="{
-
-let myTemp='';
-for(let i=0; i<30; i++){
-myTemp += 'Loop Number : ' + i + '<br>' ;
+ x = document.getElementById('myText01').value
+let myTemp=''
+for(let i=0; i<=x; i++){
+myTemp += 'Loop Number : ' + i  +'<br>' ;
 }
 document.getElementById('mySpan01').innerHTML = myTemp
 
