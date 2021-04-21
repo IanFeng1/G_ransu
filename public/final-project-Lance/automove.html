@@ -1,9 +1,59 @@
+ver 0.0.1
+
 <script>
-function myFunmoveright(){
-	 // alert(  parsenInt(document.getElementById('mySpan01').style.left)   )
-  document.getElementById('mySpan01').style.left=
-     parseInt(document.getElementById('mySpan01').style.left) + 10
+  
+  document.myXpixels = 25
+  document.myYpixels = 25
+
+function myRight(){
+ // alert(  parsenInt(document.getElementById('mySpan01').style.left)   )
+ document.getElementById('mySpan01').style.left=
+     parseInt(document.getElementById('mySpan01').style.left) +  document.myXpixels
 }
+function myleft(){
+ // alert(  parsenInt(document.getElementById('mySpan01').style.left)   )
+document.getElementById('mySpan01').style.left=
+     parseInt(document.getElementById('mySpan01').style.left) -  document.myXpixels
+
+}
+function myup(){
+// alert(  parsenInt(document.getElementById('mySpan01').style.top)   )
+document.getElementById('mySpan01').style.top=
+     parseInt(document.getElementById('mySpan01').style.top) - 25
+}
+function mydown(){
+// alert(  parsenInt(document.getElementById('mySpan01').style.top)   )
+  document.getElementById('mySpan01').style.top=
+     parseInt(document.getElementById('mySpan01').style.top) + 25
+}
+
+function myStopRight(){
+ // alert(  parsenInt(document.getElementById('mySpan01').style.left)   )
+ document.getElementById('mySpan01').style.left=
+     parseInt(document.getElementById('mySpan01').style.left) +  document.myXpixels
+}
+function myStopleft(){
+ // alert(  parsenInt(document.getElementById('mySpan01').style.left)   )
+document.getElementById('mySpan01').style.left=
+     parseInt(document.getElementById('mySpan01').style.left) -  document.myXpixels
+
+}
+function myStopup(){
+// alert(  parsenInt(document.getElementById('mySpan01').style.top)   )
+document.getElementById('mySpan01').style.top=
+     parseInt(document.getElementById('mySpan01').style.top) - document.myYpixels
+}
+function myStopdown(){
+// alert(  parsenInt(document.getElementById('mySpan01').style.top)   )
+  document.getElementById('mySpan01').style.top=
+     parseInt(document.getElementById('mySpan01').style.top) + document.myYpixels
+}
+
+
+function Hpmines1(){
+	document.getElementById('myText01').value -= 10
+}
+
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -20,16 +70,37 @@ function myHitOther(my1,my2){
        return true
    }
 }
+
+function Wall(){
+ document.getElementById('mySpan01').style.left = 
+      parseInt(document.getElementById('mySpan01').style.left) - document.myXpixels
+}
+
+
+
 </script>
 HP<input id="myText01" type=text value='100' ><br>
+ 
 
-<input type=button value="Auto move" onClick="{
-  myFunmoveright()
-if(myHitOther('mySpan01','mySpan02')){
-  
+<input type=button value="Right" onClick="{
+  myRight()
+if(myHitOther('mySpan01','myTrap')){
+  Hpmines1()
 }
-}"><br>
+if(myHitOther('mySpan01','myWall')){
+ myStopRight() }
+}">
 
-<span id="mySpan01" style="position:absolute; width:42 ; height:20; left:100; top:500; width:45; height:15"> span 1 </span><br>
-<span id="mySpan02" style="position:absolute; width:42 ; height:20; left:200; top:500; width:45; height:15"> span 2 </span><br>
+<input type=button value="Left" onClick="{
+  myleft()
+if(myHitOther('mySpan01','myTrap')){
+  Hpmines1()
+}
+}">
+
+<font color="gray"><span id="mySpan01" style="position:absolute;left:100; top:500; width:15; height:15"> ▇ </span></font><br>
+<font color="red"><span id="myTrap" style="position:absolute;; left:200; top:500; width:5; height:5"> ▇ </span></font><br>
+<font color="yellow"><span id="myWall" style="position:absolute; left:100; top:460; width:160; height:20"> ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ </span></font>
+<font color="yellow"><span id="myWall01" style="position:absolute; left:100; top:460; width:160; height:20"> ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ </span></font>
+
 <span id="mySpan78">...</Span><br><br>
