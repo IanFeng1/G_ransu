@@ -1,0 +1,192 @@
+ver 0.0.1
+
+<body
+onKeyDown="{
+	
+  let myLeft = event.key
+	if (myLeft == 'a'
+	&& parseInt(document.getElementById('myHero01').style.left)>=20
+	&& myBarrierLeft('myHero01','myWall')
+	&& myBarrierLeft('myHero01','myWall2')
+	&& myBarrierLeft('myHero01','myWall3')
+	&& myBarrierLeft('myHero01','myWall4')
+        ) {
+	document.getElementById('myHero01').style.left =
+	parseInt(document.getElementById('myHero01').style.left) -25
+        }
+	if (myLeft == 'a'
+	&& myHitOther('myHero01','myGate')
+	){
+	location = 'https://google.ca'
+	}
+	
+  let myUp = event.key
+	if (myUp == 'w'
+	&& parseInt(document.getElementById('myHero01').style.top)>=20
+	&& myBarrierUp('myHero01','myWall')
+	&& myBarrierUp('myHero01','myWall2')
+	&& myBarrierUp('myHero01','myWall3')
+	&& myBarrierUp('myHero01','myWall4')
+) {
+	document.getElementById('myHero01').style.top =
+	parseInt(document.getElementById('myHero01').style.top) -25
+	}
+	if (myUp == 'w'
+	&& myHitOther('myHero01','myGate')
+	){
+	location = 'https://google.ca'
+	}
+	
+  let myRight = event.key
+	if (myRight == 'd'
+	&& parseInt(document.getElementById('myHero01').style.left)<=1540
+	&& myBarrierRight('myHero01','myWall')
+	&& myBarrierRight('myHero01','myWall2')
+	&& myBarrierRight('myHero01','myWall3')
+	&& myBarrierRight('myHero01','myWall4')
+) {
+	document.getElementById('myHero01').style.left =
+	parseInt(document.getElementById('myHero01').style.left) +25
+	}
+	if (myRight == 'd'
+	&& myHitOther('myHero01','myGate')
+	){
+	location = 'https://google.ca'
+	}
+	
+  let myDown = event.key
+	if (myDown == 's' 
+	&& parseInt(document.getElementById('myHero01').style.top)<=700
+	&& myBarrierDown('myHero01','myWall')
+	&& myBarrierDown('myHero01','myWall2')
+	&& myBarrierDown('myHero01','myWall3')
+	&& myBarrierDown('myHero01','myWall4')
+) {
+	document.getElementById('myHero01').style.top =
+	parseInt(document.getElementById('myHero01').style.top) +25
+	}
+	if (myDown == 's'
+	&& myHitOther('myHero01','myGate')
+	){
+	location = 'https://google.ca'
+	}
+}"
+>
+</body>
+
+<script>
+  
+  document.myXpixels = 25
+  document.myYpixels = 25
+
+ 
+
+function myBarrierLeft(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  <=  left2) ||      	   
+       (bottom1 <=  top2) ||
+       (left1   >  right2) ||
+       (top1    >=  bottom2)){
+       return true
+   }
+}
+
+
+
+function myBarrierRight(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  <  left2) ||      	   
+       (bottom1 <=  top2) ||
+       (left1   >=  right2) ||
+       (top1    >=  bottom2)){
+       return true
+   }
+}
+
+
+function myBarrierUp(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  <=  left2) ||      	   
+       (bottom1 <=  top2) ||
+       (left1   >=  right2) ||
+       (top1    >  bottom2)){
+       return true
+   }
+}
+
+function myBarrierDown(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  <=  left2) ||      	   
+       (bottom1 <  top2) ||
+       (left1   >= right2) ||
+       (top1    >=  bottom2)){
+       return true
+   }
+}
+
+function Hpmines1(){
+	document.getElementById('myText01').value -= 10
+}
+
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+
+</script>
+
+
+
+HP<input id="myText01" type=text value='100' ><br>
+ 
+
+<img src = "H-ero.png" id="myHero01" style="position:absolute;left:100; top:700; width:25; height:25">
+<img src = "gate.png" id="myGate" style="position:absolute;left:350; top:450; width:25; height:25">
+<img src = "wall.png" id="myWall" style="position:absolute;left:100; top:725; width:300; height:25">
+<img src = "wall.png" id="myWall2" style="position:absolute;left:100; top:675; width:250; height:25">
+<img src = "wall.png" id="myWall3" style="position:absolute;left:375; top:475; width:25; height:250">
+<img src = "wall.png" id="myWall4" style="position:absolute;left:325; top:475; width:25; height:200">
+<span id="mySpan01" style="position:absolute; left:100; top:150; width:45; height:30"> span 1</span><br>
+<span id="mySpan02" style="position:absolute; left:200; top:150; width:45; height:30"> span 2</span><br>
