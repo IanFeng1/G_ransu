@@ -2,41 +2,53 @@ ver 0.0.1
 
 <body
 onKeyDown="{
-	let myLeft = event.key
+	
+  let myLeft = event.key
 	if (myLeft == 'a'
 	&& parseInt(document.getElementById('myHero01').style.left)>=20
 	&& myBarrierLeft('myHero01','myWall')
 	&& myBarrierLeft('myHero01','myWall2')
+	&& myBarrierLeft('myHero01','myWall3')
+	&& myBarrierLeft('myHero01','myWall4')
 ) {
 	document.getElementById('myHero01').style.left =
 	parseInt(document.getElementById('myHero01').style.left) -25
 	myCheckAll()
 	}
-	let myUp = event.key
+	
+  let myUp = event.key
 	if (myUp == 'w'
 	&& parseInt(document.getElementById('myHero01').style.top)>=20
 	&& myBarrierUp('myHero01','myWall')
 	&& myBarrierUp('myHero01','myWall2')
+	&& myBarrierUp('myHero01','myWall3')
+	&& myBarrierUp('myHero01','myWall4')
 ) {
 	document.getElementById('myHero01').style.top =
 	parseInt(document.getElementById('myHero01').style.top) -25
 	myCheckAll()
 	}
-	let myRight = event.key
+	
+  let myRight = event.key
 	if (myRight == 'd'
 	&& parseInt(document.getElementById('myHero01').style.left)<=1540
 	&& myBarrierRight('myHero01','myWall')
 	&& myBarrierRight('myHero01','myWall2')
+	&& myBarrierRight('myHero01','myWall3')
+	&& myBarrierRight('myHero01','myWall4')
 ) {
 	document.getElementById('myHero01').style.left =
 	parseInt(document.getElementById('myHero01').style.left) +25
 	myCheckAll()
 	}
-	let myDown = event.key
+	
+  let myDown = event.key
 	if (myRight == 's' 
 	&& parseInt(document.getElementById('myHero01').style.top)<=700
 	&& myBarrierDown('myHero01','myWall')
 	&& myBarrierDown('myHero01','myWall2')
+	&& myBarrierDown('myHero01','myWall3')
+	&& myBarrierDown('myHero01','myWall4')
 ) {
 	document.getElementById('myHero01').style.top =
 	parseInt(document.getElementById('myHero01').style.top) +25
@@ -146,13 +158,16 @@ function myHitOther(my1,my2){
 }
 
 
+
 </script>
 
 
 HP<input id="myText01" type=text value='100' ><br>
  
 
-<img src = "H-ero.png" id="myHero01" style="position:absolute;left:100; top:500; width:25; height:25">
-<img src = "wall.png" id="myWall" style="position:absolute;left:100; top:525; width:300; height:25">
-<img src = "wall.png" id="myWall2" style="position:absolute;left:100; top:475; width:250; height:25">
-<img src = "wall.png" id="myWall3" style="position:absolute;left:375; top:575; width:25; height:250">
+<img src = "H-ero.png" id="myHero01" style="position:absolute;left:100; top:700; width:25; height:25">
+<img src = "gate.png" id="myGate" style="position:absolute;left:350; top:450; width:25; height:25">
+<img src = "wall.png" id="myWall" style="position:absolute;left:100; top:725; width:300; height:25">
+<img src = "wall.png" id="myWall2" style="position:absolute;left:100; top:675; width:250; height:25">
+<img src = "wall.png" id="myWall3" style="position:absolute;left:375; top:475; width:25; height:250">
+<img src = "wall.png" id="myWall4" style="position:absolute;left:325; top:475; width:25; height:200">
