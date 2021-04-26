@@ -1,4 +1,4 @@
-ver 0.0.1
+ver 0.0.2
 
 <body
 onKeyDown="{
@@ -10,10 +10,20 @@ onKeyDown="{
 	&& myBarrierLeft('myHero01','myWall2')
 	&& myBarrierLeft('myHero01','myWall3')
 	&& myBarrierLeft('myHero01','myWall4')
-) {
+        ) {
 	document.getElementById('myHero01').style.left =
 	parseInt(document.getElementById('myHero01').style.left) -25
-	myCheckAll()
+        }
+
+	if (myLeft == 'a'
+	&& myHitOther('myHero01','myGate')
+	){
+	location = 'https://google.ca'
+	}
+	if (myLeft == 'a'
+	&& myHitOther('myHero01','myTrap01')
+	){
+	Hpmines1()
 	}
 	
   let myUp = event.key
@@ -26,7 +36,18 @@ onKeyDown="{
 ) {
 	document.getElementById('myHero01').style.top =
 	parseInt(document.getElementById('myHero01').style.top) -25
-	myCheckAll()
+
+	}
+
+	if (myUp == 'w'
+	&& myHitOther('myHero01','myGate')
+	){
+	location = 'https://google.ca'
+	}
+	if (myUp == 'w'
+	&& myHitOther('myHero01','myTrap01')
+	){
+	Hpmines1()
 	}
 	
   let myRight = event.key
@@ -39,11 +60,21 @@ onKeyDown="{
 ) {
 	document.getElementById('myHero01').style.left =
 	parseInt(document.getElementById('myHero01').style.left) +25
-	myCheckAll()
+
+	}
+	if (myRight == 'd'
+	&& myHitOther('myHero01','myGate')
+	){
+	location = 'https://google.ca'
+	}
+	if (myRight == 'd'
+	&& myHitOther('myHero01','myTrap01')
+	){
+	Hpmines1()
 	}
 	
   let myDown = event.key
-	if (myRight == 's' 
+	if (myDown == 's' 
 	&& parseInt(document.getElementById('myHero01').style.top)<=700
 	&& myBarrierDown('myHero01','myWall')
 	&& myBarrierDown('myHero01','myWall2')
@@ -52,18 +83,28 @@ onKeyDown="{
 ) {
 	document.getElementById('myHero01').style.top =
 	parseInt(document.getElementById('myHero01').style.top) +25
-	myCheckAll()
+
+	}
+	if (myDown == 's'
+	&& myHitOther('myHero01','myGate')
+	){
+	location = 'https://google.ca'
+	}
+	if (myDown == 's'
+	&& myHitOther('myHero01','myTrap01')
+	){
+	Hpmines1()
 	}
 }"
 >
 </body>
+
 <script>
   
   document.myXpixels = 25
   document.myYpixels = 25
 
-
-
+ 
 
 function myBarrierLeft(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -162,11 +203,13 @@ function myHitOther(my1,my2){
 </script>
 
 
+
 HP<input id="myText01" type=text value='100' ><br>
  
 
 <img src = "H-ero.png" id="myHero01" style="position:absolute;left:100; top:700; width:25; height:25">
 <img src = "gate.png" id="myGate" style="position:absolute;left:350; top:450; width:25; height:25">
+<img src = "Trap.png" id="myTrap01" style="position:absolute;left:300; top:700; width:35; height:25">
 <img src = "wall.png" id="myWall" style="position:absolute;left:100; top:725; width:300; height:25">
 <img src = "wall.png" id="myWall2" style="position:absolute;left:100; top:675; width:250; height:25">
 <img src = "wall.png" id="myWall3" style="position:absolute;left:375; top:475; width:25; height:250">
