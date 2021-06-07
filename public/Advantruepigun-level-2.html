@@ -9,7 +9,7 @@ document.unitY = parseInt(parseInt(window.innerHeight)/30)
 
 
 document.myXspeed = 30 
-document.myYspeed = 30 
+document.myYspeed = 1
 
 document.myXtimer = 0;
 document.myYtimer = 0;
@@ -20,6 +20,14 @@ function myXAuto(){
 	location = 'Advantruepigun-level-2.html'  	
 	}
 
+function myYAuto(){
+	document.getElementById('myArrow01').style.top = parseInt(document.getElementById('myArrow01').style.top) + 5
+	if (myHitOther('myHero01','myArrow01'))
+	{
+	location = 'Advantruepigun-level-2.html'
+	}
+
+}
 
 }
 
@@ -51,9 +59,16 @@ function myCheckAll(){
 	if (myHitOther('myWall5fake','myWall'))
 	{
 	clearInterval(document.myXtimer)                    
-	document.myXtimer = setInterval( myXAuto , document.myYspeed);
+	document.myXtimer = setInterval( myXAuto , document.myXspeed);
 	}
+	if (myHitOther('myHero01','myTrap02'))
+	{
+	clearInterval(document.myYtimer)                    
+	document.myYtimer = setInterval( myYAuto , document.myYspeed);
+	}
+
 }
+
 
 function myResize(span){
 	document.getElementById(span).style.width = (parseInt(document.getElementById(span).style.width)/25)*parseInt(document.unitX)
@@ -66,7 +81,7 @@ function myResize(span){
 
 <body
 
-onLoad="{
+//onLoad="{
 	//clearInterval(document.myTimer)                    
 	//document.mytimer = setInterval( myAuto, document.mySpeed)
 
@@ -91,6 +106,8 @@ onLoad="{
 	myResize('myWarningHitbox01')
 	myResize('myHp01')
 	myResize('mySpan01')
+	myResize('myArrow01')
+	myResize('myTrap02')
 }"
 onResize="{
 	location = location
@@ -280,6 +297,8 @@ HP<input id="myHp01" type=text value=' ' ><br>
 <img src = "h-ero.png" id="myHero01" style="position:absolute;left:100; top:700; width:25; height:25">
 <img src = "door.png" id="myGate" style="position:absolute;left:350; top:450; width:25; height:25">
 <img src = "trap-25-25.png" id="myTrap01" style="position:absolute;left:275; top:700; width:25; height:25">
+<img src = "trap-25-25.png" id="myTrap02" style="position:absolute;left:350; top:700; width:25; height:25">
+<img src = "Trap.png" id="myArrow01" style="position:absolute;left:210; top:300; width:3; height:15">
 <img src = "wall-w-400.png" id="myWall" style="position:absolute;left:100; top:725; width:400; height:25">
 <img src = "wall-w-250.png" id="myWall2" style="position:absolute;left:100; top:675; width:250; height:25">
 <img src = "wall-h-250.png" id="myWall3" style="position:absolute;left:375; top:450; width:25; height:250">
