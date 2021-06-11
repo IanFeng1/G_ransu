@@ -1,0 +1,43 @@
+<h3 align=center>Adventruepigeon</h3>
+<span id="interveiw1" style="position:absolute; left:200; top:100;">There are two level your goal is reach      </span><br>
+<span id="interveiw2" style="position:absolute; left:200; top:120;">Use 'WASD' to move </span><br>
+<span id="interveiw3" style="position:absolute; left:200; top:140;">This will touch off some trap  </span><br>
+<img src = "door.png" id="myGate" style="z-index:1;position:absolute;left:450; top:90; width:25; height:25">
+<img src = "h-ero.png" id="myHero01" style="position:absolute;left:340; top:116; width:25; height:25">
+<img src = "trap-25-25.png" id="myTrap01" style="z-index:1;position:absolute;left:385; top:136; width:25; height:25">
+<input type=button value="Start the Game" onClick="{
+	location = 'Adventruepigeon-level1.html'
+	}">
+<img src = "h-ero.jpg" id="myHero02" style="position:absolute;left:800; top:200; width:300; height:200">
+
+<script>
+
+document.unitX = parseInt(parseInt(window.innerWidth)/64)
+document.unitY = parseInt(parseInt(window.innerHeight)/30)
+
+function myResize(span){
+	document.getElementById(span).style.width = (parseInt(document.getElementById(span).style.width)/25)*parseInt(document.unitX)
+	document.getElementById(span).style.height = (parseInt(document.getElementById(span).style.height)/25)*parseInt(document.unitY)
+	document.getElementById(span).style.left = (parseInt(document.getElementById(span).style.left)/25)*parseInt(document.unitX)
+	document.getElementById(span).style.top = (parseInt(document.getElementById(span).style.top)/25)*parseInt(document.unitY)
+}
+
+</script>
+
+
+<body
+
+onLoad="{
+	myResize('interveiw1')
+	myResize('interveiw2')
+	myResize('interveiw3')
+	myResize('myGate')
+	myResize('myHero01')
+	myResize('myTrap01')
+	myResize('myHero02')
+}"
+onResize="{
+	location = location
+}"
+
+</body>
