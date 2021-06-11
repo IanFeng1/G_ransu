@@ -1,0 +1,23 @@
+<img src = "ZIZHI.gif" id="myMap" style="position:absolute;left:0; top:0; width:1280; height:760">
+
+<script>
+
+document.unitX = parseInt(parseInt(window.innerWidth)/64)
+document.unitY = parseInt(parseInt(window.innerHeight)/30)
+
+function myResize(span){
+	document.getElementById(span).style.width = (parseInt(document.getElementById(span).style.width)/25)*parseInt(document.unitX)
+	document.getElementById(span).style.height = (parseInt(document.getElementById(span).style.height)/25)*parseInt(document.unitY)
+	document.getElementById(span).style.left = (parseInt(document.getElementById(span).style.left)/25)*parseInt(document.unitX)
+	document.getElementById(span).style.top = (parseInt(document.getElementById(span).style.top)/25)*parseInt(document.unitY)
+}
+
+
+</script>
+
+<body
+
+onLoad="{
+	setTimeout(function(){location = 'Adventruepigeon-level1.html},1600)
+}"
+</body>
